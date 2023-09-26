@@ -1,0 +1,30 @@
+<div class="container" *ngIf="matiere">
+    <div class="card">
+        <div class="card-header">Liste des matières</div>
+        <div class="card-body"></div>
+        <table class="card-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>nom</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of matiere">
+                    <td>{{m.id}}</td>
+                    <td>{{m.nom}}</td>
+                    <td><button (click)="delete(m)"class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+        <div class="input-group mb-3">
+            <input #nom type="text" class="form-control" placeholder="Nouvelle matière..." aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <button class="btn  btn-primary" type="button" id="button-addon1" (click)="add(nom.value)" >Ajouter</button>
+        </div>
+
+        <p>{{nom.value}}</p>
+        
+
+</div>

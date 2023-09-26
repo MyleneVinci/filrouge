@@ -1,0 +1,26 @@
+<div class="container" >
+    <td><button class="btn btn-primary"><i class="bi bi-plus-circle"></i> Ajouter</button></td>
+
+    <div class="card">
+        <div class="card-header">Cours List</div>
+        <div class="card-body"></div>
+        <table class="card-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Matiere</th>
+                    <th>formation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let c of cours">
+                    <td>{{c.id}}</td>
+                    <td>{{c.matiere.nom}}</td>
+                    <td>{{c.formation.nom}}</td>
+                    <td><button (click)="deleteCours(c.id)"class="btn btn-danger"><i class="bi bi-trash"></i></button></td>
+                    <td><button class="btn btn-primary"  routerLink="/cours/details/{{c.id}}" ><i class="bi bi-box-arrow-in-right"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
